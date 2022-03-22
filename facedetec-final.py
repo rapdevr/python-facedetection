@@ -5,17 +5,19 @@ import datetime
 from cv2 import VideoCapture
 import imutils
 
+##motion detection sub-routine
 def motion_detection():
-    #select default cam
-    cap = cv2.VideoCapture('rtsp://rthiahulan11:br0adband@tpl11@192.168.10.236:554/stream1')
+    ##select default cam
+    cap = cv2.VideoCapture('STREAM URL')
     time.sleep(2)
 
     first_frame = None
     
     while True:
+        ##this part forms the rectangle that highlights a persons face
         frame = cap.read()[1]
         text = 'Unoccupied'
-
+        ##converstion of frame to b/w for scanning 
         greyscale_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         gaussian_frame = cv2.GaussianBlur(greyscale_frame, (21,21),0)

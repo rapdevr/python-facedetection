@@ -7,8 +7,8 @@ from playsound import playsound
 import webbrowser
 
 calibration = 0
-
-cap = cv2.VideoCapture('rtsp://rthiahulan11:br0adband@tpl11@192.168.10.236:554/stream1')
+##haarscascades were used as a pre-made facial structure template
+cap = cv2.VideoCapture('STREAM URL')
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 print("\ncamera angle is prob ok so continuing plus i can't be bothered to code a script to do that")
